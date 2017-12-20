@@ -24,12 +24,21 @@ def thingSpeakeSicaklikVeNemYaz(okunanSicaklik,okunanNem):
     print ("Veriler Gonderildi!")
 
 def tweetAt(tweetIcerigi):
-    api_key = "N5M6WI76ZP9PR84V" #twitter icin kullanilacak API
+    api_key = "Sizin Key'iniz" #twitter icin kullanilacak API
     veriler = {"api_key":api_key,"status":tweetIcerigi}
     istek = requests.post("https://api.thingspeak.com/apps/thingtweet/1/statuses/update",data = veriler)
     print ("Tweet Gonderildi!")
     #Request Nedir?
-    
+    #Bu islem bir web-sitesine girme islemi islemi olarak düsünebiliriz. Ornegin facebook.com yazıp girdigimizde
+    #bu siteye bir Request(istek) yapmis oluruz ve sitenin bize bir responce(cevap) vermesini bekleriz.
+
+    #Post Nedir?
+    #Yukarıdaki islemde requests.post() isimli bir fonksiyon cagrilmistir. Buradaki Post http protokolünün bize sagladigi
+    #bir islemdir. Bunun gibi bu protokol bizler;
+    # Post
+    # Get
+    # Delete gibi islemleri sunmustur.Detaylı bilgi http://bcakir.com/get-ve-post-metodu ve benzer bloklardan yararlanabilirsiniz!
+
 
 
 #----------
@@ -50,3 +59,13 @@ tweet = "#Training #IOT #T3Vakfi @T3Vakfi This tweet has been sent by #Raspberry
 if raspberrySicaklik > 25:
     thingSpeakeSicaklikVeNemYaz(raspberrySicaklik,raspberryNem)
     tweetAt(tweet)
+
+
+
+
+#Program Aciklamasi
+#Uygulamanin amaci: RaspberryPi ile olcülen degeri thingspeak.com da olusturdugumuz field'lara yazmak ve yine thingspeak kullanarak
+#tweet atma islemi. olusturulan field'lara thingSpeakeSicaklikVeNemYaz(sicaklik,nem) fonksiyonu ile veri yazabilirsiniz.
+#fonksiyon icinde tanimlanmis api_key kismini degistirerek sizler de deneyebilirsiniz yada benim olusturdugum alana direkt deneyebilirsiniz.
+#Tweet atma isleminde ise biz direk olarak Twitter API kullanmıyoruz. Cunku bu asamada bu api'yi kullanmak zor olacaktir.
+#thingspeak araciligi ile tweet atma islemini gerceklestirdik.
