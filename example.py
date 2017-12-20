@@ -64,8 +64,20 @@ if raspberrySicaklik > 25:
 
 
 #Program Aciklamasi
+
 #Uygulamanin amaci: RaspberryPi ile olcülen degeri thingspeak.com da olusturdugumuz field'lara yazmak ve yine thingspeak kullanarak
 #tweet atma islemi. olusturulan field'lara thingSpeakeSicaklikVeNemYaz(sicaklik,nem) fonksiyonu ile veri yazabilirsiniz.
 #fonksiyon icinde tanimlanmis api_key kismini degistirerek sizler de deneyebilirsiniz yada benim olusturdugum alana direkt deneyebilirsiniz.
 #Tweet atma isleminde ise biz direk olarak Twitter API kullanmıyoruz. Cunku bu asamada bu api'yi kullanmak zor olacaktir.
 #thingspeak araciligi ile tweet atma islemini gerceklestirdik.
+
+
+#Neden Fonksiyon Kullanmaliyiz?
+
+#Karmasik problemler fonksiyonlar ile;
+
+#daha kolay yonetilir
+#problem daha iyi analiz edilir
+#hata karsisinda sorunun tespiti daha hizlidir.
+#cozum adim adim yapilmis olur.
+#kod okunurlugu artmis olur.(ana programa baktigimizda sadece 8 satirlik kod bulunmaktadir.Kodun anlasilabilirligi artmistir.)
